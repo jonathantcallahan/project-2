@@ -9,6 +9,9 @@ app.use(bodyParser.json());
 
 app.use(express.static('public'))
 
+const pets = require('./controllers/html')
+pets(app)
+
 const PORT = process.argv[2] || 8080;
 
 db.sequelize.sync().then(() => {
