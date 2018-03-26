@@ -1,0 +1,36 @@
+body{
+    background-repeat: no-repeat;
+    background-size:  cover;
+    background-position: center center;
+    background-attachment: fixed;
+  
+}
+
+
+/* FOOTER */
+
+.page-footer{
+    padding: 10px 0px;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+}
+
+.page-footer h6{
+    text-align: center;
+}
+
+.main-container{
+    height: 550px;
+    padding: 0px 110px;
+}
+
+/*Navigation */
+
+.nav-wrapper{
+    padding: 0px 110px;
+}
+
+
+
+

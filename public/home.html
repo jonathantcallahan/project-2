@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <Title>Tamagotchi</Title>
+        <!-- Compiled and minified CSS for Materialize -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
+        <link rel="stylesheet" href="css/style.css">
+        <style>
+        * {
+            font-family: arial;
+        } 
+        </style>
+        <script
+        src="https://code.jquery.com/jquery-3.3.1.js"
+        integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+        crossorigin="anonymous"></script>
+        <script src="javascript/home.js"></script>
+    </head>
+    <body>
+    <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ Navbar +++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+        <nav>
+            <div class="nav-wrapper">
+                <a href="#" class="brand-logo">Tamagotchi</a>
+                <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <li><a href="#" id="signup">Sign Up</a></li>
+                <li><a href="#" id="login">Sign In</a></li>
+                </ul>
+            </div>
+        </nav>
+     <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ End Navbar +++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+      <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ Body +++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+                
+        <div style="text-align: center">
+            <h2>My Tamagotchi</h2>
+            <h3>Hunger: <span id="hunger-level">placeholder</span></h3>
+        </div>
+        <div class="main-container">
+
+                <!--User Enters his/her name or a random tamagotchi name-->
+            <div class="row">
+                <div class="input-field col s6 name-input">
+                    <input value="" id="tamagotchi-name" type="text" class="validate">
+                    <label class="active" for="tamagotchi-name">Name Your Tamagotchi</label>
+                <!-- Interation Field -->
+                    <select class="icons">
+                        <option value="" disabled selected>Choose your option</option>
+                        <option value="" data-icon="css/images/cat.gif" class="circle">Cat</option>
+                        <option value="" data-icon="images/office.jpg" class="circle">example 2</option>
+                        <option value="" data-icon="images/yuna.jpg" class="circle">example 3</option>
+                    </select>
+                    <label>Pick Your Own Tamagotchi</label>
+
+                    <a class="waves-effect red lighten-1 btn-large">Button</a>
+                </div>
+                <div class="input-field col s6 name-input">
+                        <select class="icons">
+                            <option value="" disabled selected>Choose your option</option>
+                            <option value="" data-icon="images/cat.gif" class="circle">example 1</option>
+                            <option value="" data-icon="images/office.jpg" class="circle">example 2</option>
+                            <option value="" data-icon="images/yuna.jpg" class="circle">example 3</option>
+                        </select>
+                        <label>Choose An Available Tamagotchi</label>
+                    </div> 
+            </div>
+
+                    <!-- Choices Field for User to pick an avaiable tamagotchi -->
+        </div>
+        
+
+     <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ End Body +++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+      <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ Footer +++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+        <footer class="page-footer">
+                <div class="container">
+                    <h6>@2018 by Jonathan Callahan, Caglar Panus, Elias Martinez, and Anna Tillack</h6>
+                </div>
+        </footer>
+     <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ End Footer +++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+    
+            <!-- Compiled and minified JavaScript for Materialize-->
+            
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+    
+    </body>
+   
+</html>
