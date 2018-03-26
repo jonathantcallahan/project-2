@@ -7,13 +7,13 @@ module.exports = (app) => {
         console.log(req.body)
         db.Pets.update(
             {lastFed: req.body.time},
-           {where: { id:req.body.id }}
+           {where: { name:req.body.name }}
         )
         .then(data => console.log(data))
         .catch(err => console.log(err))
     });
-    app.get('/', (req, res) => {
-        res.sendFile('../public/index.html')
+    app.get('/pet/:name', (req, res) => {
+        res.sendFile(path.join(__dirname, './../public/', 'index.html'))
     });
     app.get('/home', (req, res) => {
         res.sendFile(path.join(__dirname, '../public/', 'home.html'))

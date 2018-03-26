@@ -2,8 +2,8 @@ const db = require('../models')
 
 module.exports = (app) => {
 
-    app.get('/my-pet/api', (req, res) => {
-        db.Pets.findAll({}).then(data => {
+    app.get('/my-pet/api/:name', (req, res) => {
+        db.Pets.findAll({where: {name: req.params.name}}).then(data => {
             res.json(data)
         })
     }),
@@ -16,6 +16,10 @@ module.exports = (app) => {
             console.log(data)
             res.end()
         })
+    }),
+    app.get('/home/api', (req, res) => {
+        db.Pets.findAll({})
+        .then(data => res.json(data))
     })
 
 }

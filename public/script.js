@@ -1,23 +1,28 @@
 $(document).ready(() => {
     //alert(Date.now())
+
+    var urlArr = window.location.href.split('/');
+    var urlName = urlArr[urlArr.length - 1]
+
     function secondCounter(time){
         var newTime = parseInt(time);
         function displayNum(){
             newTime += .008
-            $('#hunger-level').text(`${newTime.toFixed(1)} minutes have passed since last feeding`)
+            $('#hunger-level').text(`${newTime.toFixed(1)} minutes have passed since ${urlName} was last fed`)
         };
         setInterval(displayNum, 500)
     }
 
     //ajax call to get timestamp from database
     $.ajax({
-        url: 'http://localhost:8080/my-pet/api',
+        url: `http://localhost:8080/my-pet/api/${urlName}`,
         method: 'GET'
     }).then(data => {
+        
         console.log(data)
         var elapsedTime = ((Date.now() - parseFloat(data[0].lastFed))/1000)/60
-        console.log(`${elapsedTime} minutes have pased since last fed`)
-        $('#hunger-level').text(`${elapsedTime.toFixed(2)} minutes have passed since last feeding`)
+        console.log(`${elapsedTime} minutes have pased since ${urlName} was last fed`)
+        $('#hunger-level').text(`${elapsedTime.toFixed(2)} minutes have passed since ${urlName} was last fed`)
         secondCounter(elapsedTime.toFixed(2))
     }).catch((err)=>console.log(err))
 
@@ -30,7 +35,7 @@ $(document).ready(() => {
             method: 'POST',
             data: 
             {
-                id: '1',
+                name: urlName,
                 time: Date.now(),
             },
             success: (data) => {
@@ -51,4 +56,5 @@ $(document).ready(() => {
         // })
         // .catch(err => console.log(err))
     })
+
 })

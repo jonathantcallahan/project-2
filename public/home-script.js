@@ -10,4 +10,11 @@ $(document).ready(() => {
         console.log('button clicked')
         location.reload()
     })
+    $.get('/home/api', data => {
+        console.log(data)
+        for(var i = 0; i<data.length; i++){
+            const a = $('<a>').attr('data-id',data[i].id).attr('href',`/pet/${data[i].name}`).text(data[i].name)
+            $('#list').append(a)
+        }
+    })
 })
