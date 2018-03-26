@@ -16,6 +16,6 @@ petsApi(app)
 
 const PORT = process.argv[2] || 8080;
 
-db.sequelize.sync().then(() => {
+db.sequelize.sync({force:true}).then(() => {
     app.listen(PORT, () => console.log(`Listening on port ${PORT}...`))
 })

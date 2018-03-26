@@ -1,4 +1,5 @@
 const db = require('../models')
+const path = require('path')
 
 module.exports = (app) => {
 
@@ -13,6 +14,9 @@ module.exports = (app) => {
     });
     app.get('/', (req, res) => {
         res.sendFile('../public/index.html')
+    });
+    app.get('/home', (req, res) => {
+        res.sendFile(path.join(__dirname, '../public/', 'home.html'))
     })
 
 
