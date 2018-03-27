@@ -1,4 +1,5 @@
 $(document).ready(() => {
+    $('select').formSelect()
 
     $('#submit-pet').click(function(){
         var name = $('#pet-name').val().trim();
