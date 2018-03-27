@@ -13,8 +13,15 @@ $(document).ready(() => {
     $.get('/home/api', data => {
         console.log(data)
         for(var i = 0; i<data.length; i++){
+            const d = $('<div>')
+            const b = $('<button>').attr('id', 'delete-button').attr('data-id', data[i].id).html('Delete')
             const a = $('<a>').attr('data-id',data[i].id).attr('href',`/pet/${data[i].name}`).text(data[i].name)
-            $('#list').append(a)
+            a.append(b)
+            d.append(a)
+            $('#list').append(d)
         }
+      //  $('#delete-button')
     })
+
+
 })

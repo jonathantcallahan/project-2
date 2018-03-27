@@ -20,6 +20,13 @@ module.exports = (app) => {
     app.get('/home/api', (req, res) => {
         db.Pets.findAll({})
         .then(data => res.json(data))
+    });
+    app.delete('/home/api/:id', (req, res) => {
+        db.Pets.destroy({where: {id:req.params.id}})
+        .then(data => {
+            conosle.log(data)
+            res.end()
+        })
     })
 
 }
