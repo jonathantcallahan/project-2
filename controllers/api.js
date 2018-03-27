@@ -24,7 +24,7 @@ module.exports = (app) => {
     app.delete('/home/api/:id', (req, res) => {
         db.Pets.destroy({where: {id:req.params.id}})
         .then(data => {
-            conosle.log(data)
+            console.log(data)
             res.end()
         })
     })
