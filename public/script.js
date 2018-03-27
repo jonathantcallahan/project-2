@@ -22,7 +22,7 @@ $(document).ready(() => {
 
     //ajax call to get timestamp from database
     $.ajax({
-        url: `http://localhost:8080/my-pet/api/${urlName}`,
+        url: `/my-pet/api/${urlName}`,
         method: 'GET'
     }).then(data => {
         
