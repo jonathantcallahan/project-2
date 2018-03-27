@@ -2,9 +2,9 @@ $(document).ready(() => {
     //alert(Date.now())
 
 
-    var dogArr = ['./images/dog-normal.gif','./images/dog-sleep.gif','./images/dog-eat.gif'];
-    var catArr = ['./images/cat-normal.gif','./image/cat-sleep.gif','/images/cat-eat.gif'];
-    var birdArr = [];
+    var dogArr = ['./../images/dog-normal.gif','./../images/dog-sleep.gif','./../images/dog-fed.gif'];
+    var catArr = ['./../images/cat-normal.gif','./../images/cat-sleep.gif','./../images/cat-fed.gif'];
+    var birdArr = ['./../images/bird-normal.gif','./../images/bird-sleep.gif', './../images/bird-fed.gif'];
     let chosenPet;
 
 
@@ -41,6 +41,8 @@ $(document).ready(() => {
 
         console.log(chosenPet)
 
+        $('#character-button').attr('src', chosenPet[0])
+
 
         var elapsedTime = ((Date.now() - parseFloat(data[0].lastFed))/1000)/60
         console.log(`${elapsedTime} minutes have pased since ${urlName} was last fed`)
@@ -52,6 +54,8 @@ $(document).ready(() => {
     $("#character-button").click(function(){
         // alert('fed cat')
         // console.log('test')
+        $('#character-button').attr('src', chosenPet[2])
+        
         $.ajax({
             url: 'http://localhost:8080/my-pet',
             method: 'POST',
@@ -66,8 +70,8 @@ $(document).ready(() => {
             }
         }).then(data => {
             console.log(data);
-            location.reload(true);
-        }).catch(err => console.log(err))
+            location.reload();
+        })
 
         // $.post('/my-pet', {
         //     lastFed: Date.now()       
@@ -77,6 +81,18 @@ $(document).ready(() => {
         //     location.reload();
         // })
         // .catch(err => console.log(err))
+    })
+
+    $('#sleep-button').click(function(){
+        event.preventDefault();
+        if($(this).text() === 'Sleep'){
+            $('#character-button').attr('src', chosenPet[1])    
+            $(this).text('Wake Up')
+        } else {
+            $('#character-button').attr('src', chosenPet[0])
+            $(this).text('Sleep')
+        }
+        
     })
 
 })
