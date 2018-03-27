@@ -57,7 +57,7 @@ $(document).ready(() => {
         $('#character-button').attr('src', chosenPet[2])
         
         $.ajax({
-            url: 'http://localhost:8080/my-pet',
+            url: '/my-pet',
             method: 'POST',
             data: 
             {
