@@ -6,6 +6,12 @@
         * {
             font-family: arial;
         } 
+
+        #health-bar {
+            height: 70px;
+            width: 40%;
+            border: black 2px solid;
+        }
         </style>
         <script
         src="https://code.jquery.com/jquery-3.3.1.js"
@@ -17,6 +23,9 @@
             <div style="text-align: center">
                 <h2>My Tomagotchi</h2>
                 <h3>Hunger: <span id="hunger-level">placeholder</span></h3>
+                <div id="health-bar">
+                    <div id="healt-bar-green"></div>
+                </div>
                 <div>
                     <img id="character-button" height="200px" src="">
                 </div>
