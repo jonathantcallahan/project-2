@@ -25,7 +25,7 @@ $(document).ready(function() {
               
               console.log(response);
               var weatherIcon = response.weather[0].icon;
-              var imagePath = "../public/css/images/"+ weatherIcon + ".jpg";
+              var imagePath = "/images/"+ weatherIcon + ".jpg";
               console.log(imagePath);
             
               $('.app-wrapper').css('background-image','url('+ imagePath +')');
