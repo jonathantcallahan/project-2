@@ -17,11 +17,15 @@
   },
   "homepage": "https://github.com/jonathantcallahan/project-2#readme",
   "dependencies": {
+    "bcrypt-nodejs": "0.0.3",
     "body-parser": "^1.18.2",
     "dotenv": "^5.0.1",
     "express": "^4.16.3",
-    "mysql": "^2.15.0",
+    "express-session": "^1.14.2",
+    "moment": "^2.21.0",
     "mysql2": "^1.5.3",
+    "passport": "^0.3.2",
+    "passport-local": "^1.0.0",
     "sequelize": "^4.37.4"
   }
 }
