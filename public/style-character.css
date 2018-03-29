@@ -1,0 +1,105 @@
+body{
+    background-image: url("images/background.png");
+    font-family: 'Press Start 2P', cursive;
+    padding: 0;
+    margin: 0;
+    width: 100vw;
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-size:  cover;
+    background-position: center center;
+    background-attachment: fixed;
+    /*display: none;*/
+}
+
+/*Navigation Bar */
+
+.nav-bar{
+    padding: 0px 110px;
+}
+
+/* FOOTER */
+.page-footer{
+ 
+    align-items: center;
+    width: 100%;
+    position: fixed;
+    left: 0px;
+    bottom: 0px;
+    padding: 20px 0px;;
+  
+}
+.page-footer h6{
+    text-align: center;
+    line-height: 1.5;
+    font-size:1.0rem;
+    margin: 0;
+}
+
+/*Main Body - Character Info */
+
+#health-bar {
+    height: 70px;
+    width: 40%;
+    border: black 2px solid;
+}
+
+.game-info h3{
+    font-size: 30px;
+}
+
+.play-container{
+    margin-top: 40px;
+}
+
+/*Character Frame */
+
+#character-frame{
+    height: 400px;
+    width: 490px;
+    position: relative;
+    left: 120px;
+}
+
+#character-button{
+    width: 250px;
+    height: 250px;
+    z-index: 1;
+    position: relative;
+    right: 260px;
+    bottom: 80px;
+}
+
+.game-buttons{
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 50%;
+    z-index: 1;
+    position: relative;
+    
+}
+#sleep-button{
+    right: 115px;
+    bottom: 230px;
+    background-color: rgb(151, 151, 217);
+}
+
+#feed-button{
+    left: 180px;
+    bottom: 230px;
+    background-color: rgb(245, 111, 99);
+}
+
+#clean-button{
+    right: 105px;
+    bottom: 72px;
+    background-color: rgb(134, 198, 134)
+}
