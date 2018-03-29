@@ -1,16 +1,14 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <link rel="shortcut icon" href="css/images/tamagotchi.png" />
-        <Title>Tamagotchi</Title>
+        <link rel="shortcut icon" href="images/tamagotchi.png">
+        <title>Tamagotchi</title>
         <!-- Compiled and minified CSS for Materialize -->
+        <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
         <link rel="stylesheet" href="./style.css">
-        <style>
-        * {
-            font-family: arial;
-        } 
+      
         </style>
         <script
         src="https://code.jquery.com/jquery-3.3.1.js"
@@ -24,7 +22,7 @@
         <div class="app-wrapper">
             <nav>
                 <div class="nav-wrapper">
-                    <a href="/" class="brand-logo">Tamagotchi</a>
+                    <a href="/home" class="brand-logo">Tamagotchi</a>
                     
                     <ul id="nav-mobile" class="right hide-on-med-and-down">
                     <li><a href="/signup" id="signup">Sign Up</a></li>
@@ -38,7 +36,7 @@
                         <li><a href="/signin"><i class="material-icons">verified_user</i>Sign In</a></li>
                         <li><a href="/signup"><i class="material-icons">account_box</i>Sign Up</a></li>
                     </ul>
-                    <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+                    <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons" style="font-size: 2.5rem">menu</i></a>
                 </div>  
             </nav>
             
@@ -54,15 +52,18 @@
                     <!--User Enters his/her name or a random tamagotchi name-->
                 <div class="row">
                     <div class="input-field col s5 name-input">
+                        <label>Pick Your Own Tamagotchi</label>
                         <input value="" id="pet-name" type="text" placeholder="name" class="validate">
+                        
                     <!-- Interation Field -->
                         <select class="myselect" id='pet-type'>
                             <option disabled selected>Choose your option</option>
                             <option value="dog" data-icon="" class="circle">Dog</option>
                             <option value="cat" data-icon="" class="circle">Cat</option>
                             <option value="bird" data-icon="" class="circle">Bird</option>
+                            
                         </select>
-                        <label>Pick Your Own Tamagotchi</label>
+                        
                         <a class="waves-effect red lighten-1 btn-large" id="submit-pet">Button</a>
                         <!--<a class="waves-effect red lighten-1 btn-large">Button</a>-->
                     </div>
@@ -70,6 +71,7 @@
                     <div class="middle-field col s2"><h2>OR</h2></div>
                 
                     <div class="input-field col s5 name-input">
+                        
                             <ul class="myselect" id="list">
                                 
                             <ul/>
