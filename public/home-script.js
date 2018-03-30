@@ -1,14 +1,6 @@
 $(document).ready(() => {
   $("select").formSelect();
 
-  var User = {};
-
-  $.get("/api/user/data").then(data => {
-    console.log(data);
-    User.id = data.id;
-    User.name = data.name;
-  });
-
   $("#submit-pet").click(function() {
     var name = $("#pet-name")
       .val()
@@ -17,8 +9,7 @@ $(document).ready(() => {
 
     $.post("/my-pet/api", {
       name: name,
-      petType: petType,
-      UserId: User.id
+      petType: petType
     }).then(() => {
       console.log("button clicked");
       location.reload();
@@ -34,8 +25,7 @@ $(document).ready(() => {
         .attr("data-id", id)
         .html("Delete");
       const a = $("<a>")
-        .attr("data-id", id)
-        .attr("href", `/pet/${name}`)
+        .attr("href", "#")
         .text(name);
       d.append(a, b);
       $("#list").append(d);
@@ -43,9 +33,9 @@ $(document).ready(() => {
 
     $(".delete-button").click(function() {
       event.preventDefault();
-      var petId = $(this).data("id");
-      console.log(petId);
-      $.ajax({url: `/home/api/${petId}`, method: "DELETE",
+      const id = $(this).data("id");
+      console.log(id);
+      $.ajax({url: "/my-pet/api", method: "DELETE",data: {id},
         success: () => {
           location.reload();
         }
