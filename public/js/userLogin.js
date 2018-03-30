@@ -11,7 +11,7 @@ $(() => {
     };
 
     if (!body.name || !body.password) return;
-
+console.log(body);
     $.post("/api/user/login", body)
       .then(href => window.location.replace(href))
       .fail(err => alert(`Error: ${err.responseText}`));

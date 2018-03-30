@@ -12,6 +12,8 @@ module.exports = (app) => {
         .then(data => console.log(data))
         .catch(err => console.log(err))
     });
+
+    
     app.get('/pet/:name', (req, res) => {
         res.sendFile(path.join(__dirname, './../public/', 'index.html'))
     });
