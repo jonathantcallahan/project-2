@@ -71,7 +71,8 @@
     background-attachment: fixed;
 }
 
-.sign-up-form {
+.sign-up-form,
+.login-form {
     background-color:white;
     padding:10px;
     margin-top: 15px;
