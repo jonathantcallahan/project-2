@@ -1,6 +1,10 @@
 $(document).ready(() => {
   $("select").formSelect();
 
+  $.get('/api/user/data', user => {
+    console.log(user)
+  })
+
   $("#submit-pet").click(function() {
     var name = $("#pet-name")
       .val()
