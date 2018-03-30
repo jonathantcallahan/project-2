@@ -4,7 +4,8 @@ $(document).ready(() => {
 
     var dogArr = ['./../images/dog-normal.gif','./../images/dog-sleep.gif','./../images/dog-fed.gif'];
     var catArr = ['./../images/cat-normal.gif','./../images/cat-sleep.gif','./../images/cat-fed.gif'];
-    var birdArr = ['./../images/bird-normal.gif','./../images/bird-sleep.gif', './../images/bird-fed.gif'];
+    var gorillaArr = ['./../images/happy-gorilla.gif','./../images/sleepy-gorilla.gif', './../images/mad-gorilla.gif'];
+    var sonicArr = ['./../images/happy-sonic.gif','./../images/sleepy-sonic.gif', './../images/mad-sonic.gif'];
     let chosenPet;
 
 
@@ -35,8 +36,11 @@ $(document).ready(() => {
             case('cat'):
                 chosenPet = catArr;
                 break;
-            case('bird'):
-                chosenPet = birdArr;
+            case('gorilla'):
+                chosenPet = gorillaArr;
+                break;
+            case('sonic'):
+                chosenPet = sonicArr;
         }
 
         console.log(chosenPet)
