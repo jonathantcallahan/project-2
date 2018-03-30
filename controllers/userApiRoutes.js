@@ -1,5 +1,5 @@
 // Requiring our models and passport as we've configured it
-const db = require("../models");
+const { User } = require("../models");
 const passport = require("../middleware/passport");
 
 module.exports = app => {
@@ -18,7 +18,7 @@ module.exports = app => {
   // how we configured our Sequelize User Model. If the user is created successfully, proceed to log the user in,
   // otherwise send back an error
   app.post("/api/user/signup", (req, res) =>
-    db.User.create({
+    User.create({
       name: req.body.name,
       email: req.body.email,
       password: req.body.password

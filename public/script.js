@@ -1,104 +1,96 @@
+const dogArr = [
+  "./../images/dog-normal.gif",
+  "./../images/dog-sleep.gif",
+  "./../images/dog-fed.gif"
+];
+const catArr = [
+  "./../images/cat-normal.gif",
+  "./../images/cat-sleep.gif",
+  "./../images/cat-fed.gif"
+];
+const birdArr = [
+  "./../images/bird-normal.gif",
+  "./../images/bird-sleep.gif",
+  "./../images/bird-fed.gif"
+];
+
 $(document).ready(() => {
- //alert(Date.now())
+  //alert(Date.now();
+  const charButton = $("#character-button");
+  const sleepButton = $("#sleep-button");
+  const cleanButton = $("#clean-button");
+  const feedButton = $("#feed-button");
+  const hungerLevel = $("#hunger-level");
 
- var dogArr = [
-   "./../images/dog-normal.gif",
-   "./../images/dog-sleep.gif",
-   "./../images/dog-fed.gif"
- ];
- var catArr = [
-   "./../images/cat-normal.gif",
-   "./../images/cat-sleep.gif",
-   "./../images/cat-fed.gif"
- ];
- var birdArr = [
-   "./../images/bird-normal.gif",
-   "./../images/bird-sleep.gif",
-   "./../images/bird-fed.gif"
- ];
- let chosenPet;
+  function secondCounter(time, petName) {
+    var newTime = parseInt(time);
+    function displayNum() {
+      newTime += 0.008;
+      hungerLevel.text(
+        `${newTime.toFixed(
+          1
+        )} minutes have passed since ${petName} was last fed`
+      );
+    }
+    setInterval(displayNum, 500);
+  }
 
- var urlArr = window.location.href.split("/");
- var urlName = urlArr[urlArr.length - 1];
+  //ajax call to get timestamp from database
+  $.ajax({ url: "/my-pet/api", method: "GET" })
+    .then(pets => {
+      console.log(pets);
+      const pet = pets[0];
 
- function secondCounter(time, petName) {
-   var newTime = parseInt(time);
-   function displayNum() {
-     newTime += 0.008;
-     $("#hunger-level").text(
-       `${newTime.toFixed(
-         1
-       )} minutes have passed since ${petName} was last fed`
-     );
-   }
-   setInterval(displayNum, 500);
- }
+      let chosenPet;
+      switch (pet.petType) {
+        case "dog":
+          chosenPet = dogArr;
+          break;
+        case "cat":
+          chosenPet = catArr;
+          break;
+        case "bird":
+          chosenPet = birdArr;
+      }
 
- //ajax call to get timestamp from database
- $.ajax({url: "/my-pet/api",
-   method: "GET"
- })
-   .then(data => {
-     console.log(data);
+      console.log(chosenPet);
 
-     switch (data[0].petType) {
-       case "dog":
-         chosenPet = dogArr;
-         break;
-       case "cat":
-         chosenPet = catArr;
-         break;
-       case "bird":
-         chosenPet = birdArr;
-     }
+      charButton.attr("src", chosenPet[0]);
+      // Pet is asynchronously acquired
+      // Put click functions within ajax call since pet is set asynchrously
+      //
+      feedButton.click(function() {
+        charButton.attr("src", chosenPet[2]);
 
-     console.log(chosenPet);
-
-     $("#character-button").attr("src", chosenPet[0]);
-
-     var elapsedTime = (Date.now() - parseFloat(data[0].lastFed)) / 1000 / 60;
-     console.log(
-       `${elapsedTime} minutes have passed since ${data[0].name} was last fed`
-     );
-     $("#hunger-level").text(
-       `${elapsedTime.toFixed(2)} minutes have passed since ${
-         data[0].name
-       } was last fed`
-     );
-     secondCounter(elapsedTime.toFixed(2), data[0].name);
-   })
-   .catch(err => console.log(err));
-
- $("#character-button").click(function() {
-   alert("fed cat");
-   // console.log('test')
-   $("#character-button").attr("src", chosenPet[2]);
-
-   $.ajax({
-     url: "/my-pet",
-     method: "POST",
-     data: {
-       name: urlName,
-       time: Date.now()
-     },
-     success: data => {
-       console.log(data);
-       location.reload();
-     }
-   }).then(data => {
-     console.log(data);
-     location.reload();
-   });
- });
-
- $("#sleep-button").click(function() {
-   if ($(this).text() === "Sleep") {
-     event.preventDefault();
-     $("#character-button").attr("src", chosenPet[1]);
-     $(this).text("Wake Up");
-   } else {
-     $("#character-button").attr("src", chosenPet[0]);
-     $(this).text("Sleep");
-   }
- });
+        $.ajax({
+          url: "/my-pet/api",
+          method: "PATCH",
+          data: { id: pet.id },
+          success: data => location.reload()
+        }).then(data => location.reload());
+      });
+      //
+      sleepButton.click(function() {
+        if ($(this).text() === "Sleep") {
+          event.preventDefault();
+          charButton.attr("src", chosenPet[1]);
+          $(this).text("Wake Up");
+        } else {
+          charButton.attr("src", chosenPet[0]);
+          $(this).text("Sleep");
+        }
+      });
+      //
+      var elapsedTime = (Date.now() - parseFloat(pet.lastFed)) / 1000 / 60;
+      console.log(
+        `${elapsedTime} minutes have passed since ${pet.name} was last fed`
+      );
+      hungerLevel.text(
+        `${elapsedTime.toFixed(2)} minutes have passed since ${
+          pet.name
+        } was last fed`
+      );
+      secondCounter(elapsedTime.toFixed(2), pet.name);
+    })
+    .catch(err => console.log(err));
 });
