@@ -51,4 +51,7 @@ $(document).ready(() => {
       });
     });
   });
+
+  $('.nav-wrapper').mouseout
+
 });

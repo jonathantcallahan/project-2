@@ -81,6 +81,15 @@
 
     <script src="https://code.jquery.com/jquery.js"></script>
     <script type="text/javascript" src="/js/userLogin.js"></script>
+    <script>
+    
+        $('#sign-up-link').click(() => {
+            event.preventDefault();
+            var urlp = window.location.href.slice(-4,0)
+            window.location.href = 'http://localhost:8080/user/signup'
+        })    
+
+    </script>
 
         <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ End Body +++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
         <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ Footer +++++++++++++++++++++++++++++++++++++++++++++++++++++ -->

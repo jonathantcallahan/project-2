@@ -14,6 +14,7 @@
         integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
         crossorigin="anonymous"></script>
         <script src="./../script.js"></script>
+        <link rel="stylesheet" href="./../char-clean.css">
     </head>
     <body>
     <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ Navbar +++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
@@ -35,12 +36,9 @@
         <div class="info-container">
             <div class="game-info">
                 <h2>My Tamagotchi</h2>
-                <h3>Hunger: <span id="hunger-level">placeholder</span></h3>
+                <h3 id='hunger'>Hunger: <span id="hunger-level">placeholder</span></h3>
             </div>
 
-            <div id="health-bar">
-                <div id="healt-bar-green"></div>
-            </div>
         </div>
 
         <div class="play-container">
@@ -50,10 +48,15 @@
                 <img id="character-button" src="./../images/cat-normal.gif">
                 
             </div>
-
-            <button id='sleep-button' class="game-buttons">Sleep</button>
-            <button id='feed-button' class="game-buttons">Feed</button>
-            <button id='clean-button' class="game-buttons">Clean</button>
+            <div class='button-cont'>
+                <div id='sleep-button' class='clear-buttons'> </div>
+                <div id='feed-button' class='clear-buttons'> </div>
+                <div id='button-one' class='clear-buttons'> </div>
+            </div>
+            
+           <!-- <button id='sleep-button' class="game-buttons">Sleep</button>
+             <button id='feed-button' class="game-buttons">Feed</button>
+            <button id='clean-button' class="game-buttons">Clean</button> -->
 
         </div>
 
@@ -68,11 +71,11 @@
 
      <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ End Body +++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
       <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ Footer +++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
-        <footer class="page-footer">
+   <!--     <footer class="page-footer">
                 <div class="container">
                     <h6>@2018 by Jonathan Callahan, Caglar Panus, Elias Martinez, and Anna Tillack</h6>
                 </div>
-        </footer>
+        </footer> -->
      <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ End Footer +++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
     
             <!-- Compiled and minified JavaScript for Materialize-->

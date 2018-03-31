@@ -72,9 +72,6 @@ $(document).ready(() => {
         case "cat":
           chosenPet = catArr;
           break;
-        case "bird":
-          chosenPet = birdArr;
-          break;
         case "gorilla":
           chosenPet = gorillaArr;
                   break;
@@ -99,14 +96,14 @@ $(document).ready(() => {
         }).then(data => location.reload());
       });
       //
+      var sleep = false;
       sleepButton.click(function() {
-        if ($(this).text() === "Sleep") {
-          event.preventDefault();
+        if (sleep) {
           charButton.attr("src", chosenPet[1]);
-          $(this).text("Wake Up");
+          sleep = false;
         } else {
           charButton.attr("src", chosenPet[0]);
-          $(this).text("Sleep");
+          sleep = true;
         }
       });
       //
