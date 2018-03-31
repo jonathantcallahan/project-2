@@ -21,6 +21,8 @@ $(document).ready(() => {
   const cleanButton = $("#clean-button");
   const feedButton = $("#feed-button");
   const hungerLevel = $("#hunger-level");
+  let petId;
+  let petLastFed;
 
   function secondCounter(time, petName) {
     var newTime = parseInt(time);
@@ -44,9 +46,12 @@ $(document).ready(() => {
       console.log(window.location.href.split('/'))
       var nameArr = window.location.href.split('/');
       var petName = nameArr[4]
-      pets.forEach(({name, petType}) => {
+      pets.forEach(({name, petType, id, lastFed}) => {
         if(name === petName){
           chosenPet = petType;
+          petId = id;
+          petLastFed = lastFed;
+          console.log(chosenPet,petId,petLastFed)
         }
       })
       
@@ -73,7 +78,7 @@ $(document).ready(() => {
         $.ajax({
           url: "/my-pet/api",
           method: "PATCH",
-          data: { id: pet.id },
+          data: { id: petId },
           success: data => location.reload()
         }).then(data => location.reload());
       });
@@ -89,16 +94,16 @@ $(document).ready(() => {
         }
       });
       //
-      var elapsedTime = (Date.now() - parseFloat(pet.lastFed)) / 1000 / 60;
+      var elapsedTime = (Date.now() - parseFloat(petLastFed)) / 1000 / 60;
       console.log(
-        `${elapsedTime} minutes have passed since ${pet.name} was last fed`
+        `${elapsedTime} minutes have passed since ${petName} was last fed`
       );
-      hungerLevel.text(
+      hungerLevel.html(
         `${elapsedTime.toFixed(2)} minutes have passed since ${
-          pet.name
+          petName
         } was last fed`
       );
-      secondCounter(elapsedTime.toFixed(2), pet.name);
+      secondCounter(elapsedTime.toFixed(2), petName);
     })
     .catch(err => console.log(err));
 });
