@@ -1,11 +1,14 @@
 $(document).ready(() => {
   $("select").formSelect();
 
+  alert('jeb')
+
   $.get('/api/user/data', user => {
     console.log(user)
   })
 
   $("#submit-pet").click(function() {
+    console.log('button clicked')
     var name = $("#pet-name")
       .val()
       .trim();
@@ -29,11 +32,13 @@ $(document).ready(() => {
         .attr("data-id", id)
         .html("Delete");
       const a = $("<a>")
-        .attr("href", "#")
+        .attr("data-id", id)
+        .attr("href", `/pet/${name}`)
         .text(name);
       d.append(a, b);
       $("#list").append(d);
     });
+
 
     $(".delete-button").click(function() {
       event.preventDefault();

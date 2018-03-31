@@ -39,10 +39,18 @@ $(document).ready(() => {
   $.ajax({ url: "/my-pet/api", method: "GET" })
     .then(pets => {
       console.log(pets);
-      const pet = pets[0];
-
+      console.log(pets)
       let chosenPet;
-      switch (pet.petType) {
+      console.log(window.location.href.split('/'))
+      var nameArr = window.location.href.split('/');
+      var petName = nameArr[4]
+      pets.forEach(({name, petType}) => {
+        if(name === petName){
+          chosenPet = petType;
+        }
+      })
+      
+      switch (chosenPet) {
         case "dog":
           chosenPet = dogArr;
           break;

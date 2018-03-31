@@ -26,7 +26,7 @@ require("./controllers/html")(app);
 require("./controllers/api")(app);
 
 
-const PORT = process.env.PORT || process.argv[2] || 8081;
+const PORT = process.env.PORT || process.argv[2] || 8080;
 
 const force = false;
 db.sequelize.sync().then(() => {
