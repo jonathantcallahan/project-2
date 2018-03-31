@@ -8,13 +8,20 @@ const catArr = [
   "./../images/cat-sleep.gif",
   "./../images/cat-fed.gif"
 ];
-const birdArr = [
-  "./../images/bird-normal.gif",
-  "./../images/bird-sleep.gif",
-  "./../images/bird-fed.gif"
+const gorillaArr = [
+  "./../images/happy-gorilla.gif",
+  "./../images/sleepy-gorilla.gif",
+  "./../images/mad-gorilla.gif"
+];
+
+const sonicArr = [
+  "./../images/happy-sonic.gif",
+  "./../images/sleepy-sonic.gif",
+  "./../images/mad-sonic.gif"
 ];
 
 $(document).ready(() => {
+
   //alert(Date.now();
   const charButton = $("#character-button");
   const sleepButton = $("#sleep-button");
@@ -49,8 +56,11 @@ $(document).ready(() => {
         case "cat":
           chosenPet = catArr;
           break;
-        case "bird":
-          chosenPet = birdArr;
+        case "gorilla":
+          chosenPet = gorillaArr;
+          break;
+        case "sonic":
+            chosenPet = sonicArr;
       }
 
       console.log(chosenPet);
