@@ -29,7 +29,7 @@ require("./controllers/api")(app);
 const PORT = process.env.PORT || process.argv[2] || 8080;
 
 const force = false;
-db.sequelize.sync().then(() => {
+db.sequelize.sync({ force }).then(() => {
   if (force) {
     require("./seed/user")(db);
     //require("./seed/pets")(db);
