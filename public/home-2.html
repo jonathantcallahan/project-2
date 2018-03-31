@@ -7,8 +7,9 @@
         <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
-        <link rel="stylesheet" href="./style.css">
-      
+       <!-- <link rel="stylesheet" href="./style.css"> -->
+       <link rel='stylesheet' href='./clean-home.css'>
+       
         </style>
         <script
         src="https://code.jquery.com/jquery-3.3.1.js"
@@ -22,12 +23,12 @@
         <div class="app-wrapper">
             <nav>
                 <div class="nav-wrapper">
-                    <a href="/home" class="brand-logo">Tamagotchi</a>
+                    <a href="/home" class="brand-logo">Tamagotchi</a>  <h6 id="welcome">Welcome <span id="member-name"></span></h6>
                     
                     <ul id="nav-mobile" class="right hide-on-med-and-down">
-                    <li><a href="/signup" id="signup">Sign Up</a></li>
-                    <li><a href="/signin" id="signin">Sign In</a></li>
-                    <li><a href="/user/logout">Logout</a></li>
+                   <!-- <li><a href="/signup" id="signup">Sign Up</a></li>
+                    <li><a href="/signin" id="signin">Sign In</a></li> -->
+                    <li><a class='logout-button' href="/user/logout">Logout</a></li>
                     </ul>
                     
                     <!--Side Navigation. It will pop up depending on screen size-->
@@ -46,30 +47,30 @@
         <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ Body +++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
                     
             <div style="text-align: center">
-                <h2>My Tamagotchi</h2>
+                <h2></h2> 
                 
             </div>
             <div class="main-container">
                     <!--User Enters his/her name or a random tamagotchi name-->
                 <div class="row">
-                    <div class="input-field col s5 name-input">
-                        <label>Pick Your Own Tamagotchi</label>
-                        <input value="" id="pet-name" type="text" placeholder="name" class="validate">
+                    <div class="create-new input-field col s4 name-input">
+                        <h2 id="create">Create a New Pet</h2>
+                        <input value="" id="pet-name" type="text" placeholder="Name Your Pet" class="validate">
                         
                     <!-- Interation Field -->
                         <select class="myselect" id='pet-type'>
-                            <option disabled selected>Choose your option</option>
+                            <option disabled selected>Choose What Type of Animal</option>
                             <option value="dog" data-icon="" class="circle">Dog</option>
                             <option value="cat" data-icon="" class="circle">Cat</option>
                             <option value="gorilla" data-icon="" class="circle">Gorilla</option>
                             <option value="sonic" data-icon="" class="circle">Sonic</option>
                         </select>
                         
-                        <a class="waves-effect red lighten-1 btn-large" id="submit-pet">Button</a>
+                        <a class="waves-effect red lighten-1 btn-large" id="submit-pet">Create!</a>
                         <!--<a class="waves-effect red lighten-1 btn-large">Button</a>-->
                     </div>
                     
-                    <div class="middle-field col s2"><h2>OR</h2></div>
+                    <div class="middle-field col s2"><h2></h2></div>
                 
                     <div class="input-field col s5 name-input">
                         
@@ -82,7 +83,7 @@
                 </div>
                 <div class="row">
                     <div class="col s12">
-                        <h6 id="welcome">Welcome <span id="member-name">NOT LOGGED IN</span></h6>
+                       
                      </div>
                 </div>
             </div>
@@ -91,11 +92,11 @@
             
         <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ End Body +++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
         <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ Footer +++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
-            <footer class="page-footer">
+        <!--    <footer class="page-footer">
                     <div class="container">
                         <h6>@2018 by Jonathan Callahan, Caglar Panus, Elias Martinez, and Anna Tillack</h6>
                     </div>
-            </footer>
+            </footer> -->
         </div>
      <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ End Footer +++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
     

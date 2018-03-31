@@ -2,24 +2,30 @@
 <html lang="en">
 
 <head>
+        
     <title>Authentication</title>
     <link rel="shortcut icon" href="images/tamagotchi.png">
             <!-- Compiled and minified CSS for Materialize -->
     <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
-    <link rel="stylesheet" href="./../style.css">
+ <!--   <link rel="stylesheet" href="./../style.css"> -->
+    
           
     <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
     <script src="./../home-script.js"></script>
     <script src="./../home.js"></script>
+    <link rel="stylesheet" href="./../clean.css">
+    
+
+    
     
 </head>
 
 <body>
 <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ Navbar +++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
 <div class="wrapper">
-        <nav>
+      <!--  <nav>
             <div class="nav-wrapper">
                 <a href="/home" class="brand-logo">Tamagotchi</a>
                 
@@ -28,7 +34,7 @@
                 <li><a href="/signin" id="signin">Sign In</a></li>
                 </ul>
                 
-                <!--Side Navigation. It will pop up depending on screen size-->
+               
                 <ul id="slide-out" class="sidenav">
                     <h5>Menu</h5>
                         <hr>
@@ -39,34 +45,38 @@
             </div>  
         </nav>
         
-
+    -->
 <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ End Navbar +++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
 <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ Body +++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+    <div class='row'>
+        <div class='other-row col s4'><div class='image-container'><img class='image' src="./../homepage-gif.gif"></div></div>
+        <div class='log-cont col s8'>
+                <div class="container login-form">
+                        
+                        <h2>MY TAMAGOTCHI</h2>
+                        <form class="login">
+                            <div class="row">
+                                <div class="input-field col s12">
+                                    <input placeholder="User Name" id="name" type="text" class="validate">
+                                    <label for="exampleInputUser1">User Name</label>
                 
-
-    <div class="container login-form">
-        <h2>Login Form</h2>
-        <form class="login col s12">
-            <div class="row">
-                <div class="input-field col s12">
-                    <input placeholder="User Name" id="name" type="text" class="validate">
-                    <label for="exampleInputUser1">User Name</label>
-
-                </div>
-            </div>
-
-            <div class="row">
-                    <div class="input-field col s12">
-                        <input placeholder="Password" id="password" type="password" class="validate">
-                        <label for="exampleInputUser1">Password</label>
-    
+                                </div>
+                            </div>
+                
+                            <div class="row">
+                                    <div class="input-field col s12">
+                                        <input placeholder="Password" id="password" type="password" class="validate">
+                                        <label for="exampleInputUser1">Password</label>
+                    
+                                    </div>
+                            </div>
+                
+                            <button class="button btn waves-effect waves-light" type="submit" name="action" id="signUpButton">log in</button>
+                            <button class="button btn waves-effect waves-light" type="submit" name="action" id="sign-up-link">sign up</button>
+                        </form>
                     </div>
-            </div>
-
-            <button class="btn waves-effect waves-light" type="submit" name="action" id="signUpButton">Sign Up
-            </button>
-        </form>
         </div>
+    </div>
     
 
     <script src="https://code.jquery.com/jquery.js"></script>
@@ -74,17 +84,24 @@
 
         <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ End Body +++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
         <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ Footer +++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
-        <footer class="page-footer">
+     <!--   <footer class="page-footer">
                 <div class="container">
-                    <h6>@2018 by Jonathan Callahan, Caglar Panus, Elias Martinez, and Anna Tillack</h6>
+                    <h6>@2018 by Jonathan Callahan, Caglar Panus, Elias Martinez, and Anna Tillack</h6> 
                 </div>
-        </footer>
+        </footer> -->
     </div>
  <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ End Footer +++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
 
         <!-- Compiled and minified JavaScript for Materialize-->
         
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+<script>
+        $('#password').focus(function() {
+            $('.image-container').css('visibility','visible')
+            console.log('jeb')
+        })
+    
+    </script>
 
 </body>
 

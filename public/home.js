@@ -28,8 +28,8 @@ $(document).ready(function() {
               var imagePath = "/images/"+ weatherIcon + ".jpg";
               console.log(imagePath);
             
-              $('.app-wrapper').css('background-image','url('+ imagePath +')');
-              $(".app-wrapper").show();
+              // $('.app-wrapper').css('background-image','url('+ imagePath +')');
+              // $(".app-wrapper").show();
             });
         }
     }

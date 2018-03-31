@@ -1,0 +1,43 @@
+* {
+    background-color: white;
+    margin: 0px;
+    padding: 0px;
+}
+
+.brand-logo {
+    margin-left: 15px;
+    font-family: 'Press Start 2P'
+}
+
+.nav-wrapper {
+    background-color: palevioletred;
+}
+
+.logout-button {
+    background-color: palevioletred;
+    padding-right: 15px;
+}
+
+h6 { 
+    display: inline-block;
+    margin: 20px  0px 0px 400px;
+    padding-top: 6px;
+    background-color: palevioletred;
+    color: white;
+
+}
+
+#member-name {
+    background-color: palevioletred;
+
+}
+
+.drag-target {
+    visibility: hidden;
+}
+
+#create {
+    font-size: 30px;
+    margin-bottom: 15px;
+    font-family: 'Press Start 2P'
+}

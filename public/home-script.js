@@ -1,7 +1,6 @@
 $(document).ready(() => {
   $("select").formSelect();
 
-  alert('jeb')
 
   $.get('/api/user/data', user => {
     console.log(user)
@@ -24,7 +23,7 @@ $(document).ready(() => {
   });
 
   $.get("/my-pet/api", pets => {
-
+    
     pets.forEach(({ id, name }) => {
       const d = $("<div>");
       const b = $("<button>")
