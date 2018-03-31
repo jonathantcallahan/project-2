@@ -36,8 +36,43 @@ h6 {
     visibility: hidden;
 }
 
-#create {
+.create {
     font-size: 30px;
     margin-bottom: 15px;
     font-family: 'Press Start 2P'
+}
+
+.list-item {
+    background-color: lightblue;
+    width: 400px;
+    height: 50px;
+    font-size: 25px; 
+    border-radius: 4px;
+    color: white;
+    padding: 4px 0px 0px 15px;
+    margin: 15px 0px;
+    font-weight: 400;
+}
+
+a {
+    color: white;
+}
+
+.fas, .fa-bomb {
+    background-color: transparent;
+}
+
+.list-item:hover {
+    background-color: skyblue;
+}
+
+.delete-button {
+    color: rgb(170, 11, 11);
+    background-color: transparent;
+    border: none;
+    box-shadow: none;
+    border-radius: 3px;
+    width: 40px;
+    height: 40px;
+    margin-left: 30px;
 }

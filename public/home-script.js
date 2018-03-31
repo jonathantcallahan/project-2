@@ -29,11 +29,12 @@ $(document).ready(() => {
       const b = $("<button>")
         .attr("class", "delete-button")
         .attr("data-id", id)
-        .html("Delete");
+        .html("<i class='fas fa-bomb'></i>");
       const a = $("<a>")
         .attr("data-id", id)
         .attr("href", `/pet/${name}`)
         .text(name);
+      d.attr("class","list-item");
       d.append(a, b);
       $("#list").append(d);
     });
