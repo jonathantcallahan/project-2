@@ -33,10 +33,14 @@ $(document).ready(() => {
   const hungerLevel = $("#hunger-level");
   let petId;
   let petLastFed;
+  var iterate = true;
 
   function secondCounter(time, petName) {
     var newTime = parseInt(time);
     function displayNum() {
+      if(!iterate){
+        clearInterval(iterator)
+      }
       newTime += 0.008;
       hungerLevel.text(
         `${newTime.toFixed(
@@ -44,7 +48,7 @@ $(document).ready(() => {
         )} minutes have passed since ${petName} was last fed`
       );
     }
-    setInterval(displayNum, 500);
+    var iterator = setInterval(displayNum, 500);
   }
 
   //ajax call to get timestamp from database
@@ -87,7 +91,14 @@ $(document).ready(() => {
       //
       feedButton.click(function() {
         charButton.attr("src", chosenPet[2]);
-
+        iterate = false;
+        setTimeout(function(){
+          iterate = true;
+          secondCounter(0,petName)
+          setTimeout(function(){
+            $('#character-button').attr('src',chosenPet[0])
+          },500)
+        },1000)
         $.ajax({
           url: "/my-pet/api",
           method: "PATCH",

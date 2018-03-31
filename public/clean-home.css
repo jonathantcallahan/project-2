@@ -1,5 +1,4 @@
 * {
-    background-color: white;
     margin: 0px;
     padding: 0px;
 }
@@ -39,11 +38,21 @@ h6 {
 .create {
     font-size: 30px;
     margin-bottom: 15px;
-    font-family: 'Press Start 2P'
+    font-family: 'Press Start 2P';
+    color: white;
+    background-color: transparent;
+    margin-left: 15px;
+}
+
+.choose {
+    font-size: 30px;
+    margin-bottom: 15px;
+    font-family: 'Press Start 2P';
+    color: black;
 }
 
 .list-item {
-    background-color: lightblue;
+    background: linear-gradient(to right, lightblue, lightblue);
     width: 400px;
     height: 50px;
     font-size: 25px; 
@@ -63,7 +72,8 @@ a {
 }
 
 .list-item:hover {
-    background-color: skyblue;
+    background: linear-gradient(to right, lightblue, rgb(190, 226, 238));
+    font-weight: 700;
 }
 
 .delete-button {
@@ -75,4 +85,30 @@ a {
     width: 40px;
     height: 40px;
     margin-left: 30px;
+}
+
+#submit-pet {
+    margin-top: 15px;
+}
+
+
+.create-new {
+    background-color: lightblue;
+    padding: 30px;
+    height: 500px;
+    border-radius: 3px;
+
+}
+
+.create-bar {
+    padding: 30px;
+
+}
+
+.validate::placeholder {
+    color: black;
+}
+
+#pet-type {
+    color: white;
 }

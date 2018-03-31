@@ -55,20 +55,22 @@
                     <!--User Enters his/her name or a random tamagotchi name-->
                 <div class="row">
                     <div class="create-new input-field col s4 offset-s2 name-input">
-                        <h2 class="create">Create a New Pet</h2>
-                        <input value="" id="pet-name" type="text" placeholder="Name Your Pet" class="validate">
-                        
-                    <!-- Interation Field -->
-                        <select class="myselect" id='pet-type'>
-                            <option disabled selected>Choose What Type of Animal</option>
-                            <option value="dog" data-icon="" class="circle">Dog</option>
-                            <option value="cat" data-icon="" class="circle">Cat</option>
-                            <option value="gorilla" data-icon="" class="circle">Gorilla</option>
-                            <option value="sonic" data-icon="" class="circle">Sonic</option>
-                        </select>
-                        
-                        <a class="waves-effect red lighten-1 btn-large" id="submit-pet">Create!</a>
-                        <!--<a class="waves-effect red lighten-1 btn-large">Button</a>-->
+                        <div class='create-bar'>
+                            <h2 class="create">Create a New Pet</h2>
+                            <input value="" id="pet-name" type="text" placeholder="Name Your Pet" class="validate">
+                            
+                        <!-- Interation Field -->
+                            <select class="myselect" id='pet-type'>
+                                <option disabled selected id='choice'>Choose What Type of Animal</option>
+                                <option value="dog" data-icon="" class="circle">Dog</option>
+                                <option value="cat" data-icon="" class="circle">Cat</option>
+                                <option value="gorilla" data-icon="" class="circle">Gorilla</option>
+                                <option value="sonic" data-icon="" class="circle">Sonic</option>
+                            </select>
+                            
+                            <a class="waves-effect red lighten-1 btn-large" id="submit-pet">Create!</a>
+                            <!--<a class="waves-effect red lighten-1 btn-large">Button</a>-->
+                        </div>    
                     </div>
                     
                     <div class="middle-field col s2"><h2></h2></div>
@@ -76,7 +78,7 @@
                     <div class="input-field col s4 offset-s1 name-input">
                         
                             
-                            <h2 class='create'>Choose a Pet</h2>
+                            <h2 class='choose'>Choose a Pet</h2>
                             
                             <ul class="myselect" id="list">
                                 
