@@ -4,7 +4,7 @@ const db = require('../models')
 module.exports = app => {
 
   app.get("/home", (req, res) =>
-    res.sendFile(path.join(__dirname, "../public/", "home-2.html"))
+    res.sendFile(path.join(__dirname, "../public/", "home.html"))
   );
 
   app.get('/pet/:name', (req, res) => {
