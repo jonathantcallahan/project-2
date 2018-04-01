@@ -10,11 +10,13 @@
 }
 
 .button {
-    background-color: palevioletred
+    background-color: palevioletred;
+    width: 100%;
 }
 
 .container {
     margin-top: 200px;
+    text-align: center;
 }
 
 .image {
@@ -37,6 +39,22 @@ H2 {
     color: lightblue;
 }
 
+.input-field:focus {
+    border: 1px solid gray;
+    border-radius: 3px;
+}
+
 #sign-up-link {
     margin-left: 10px;
+}
+
+.signup {
+    margin-top: 20px;
+    font-size: 12px;
+}
+
+.login {
+    width: 300px;
+    display: inline-block;
+    margin-top: 40px;
 }
