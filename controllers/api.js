@@ -4,15 +4,14 @@ const { Pets, User } = require("../models");
 module.exports = app => {
   app.get("/my-pet/api", (req, res) => {
     if (!req.user) {
-      console.log('something')
       // The user is not logged in, send back an empty object
       res.json({});
       return;
     }
-    console.log('something else')
+
     Pets.findAll({
-      where: { UserId: req.user.id }//,
-    //  include: [User]
+      where: { UserId: req.user.id },
+      include: [User]
     })
       .then(pets => res.json(pets))
       .catch(err => console.log(err));
@@ -21,7 +20,6 @@ module.exports = app => {
   app.post("/my-pet/api", (req, res) => {
     if (!req.user) {
       // The user is not logged in, send back an empty object
-      console.log('no user data')
       res.json({});
       return;
     }

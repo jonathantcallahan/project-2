@@ -19,4 +19,7 @@ console.log(body);
     name.val("");
     password.val("");
   });
+
+  //Materialize initialization 
+  $('.sidenav').sidenav();
 });

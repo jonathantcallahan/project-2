@@ -7,4 +7,8 @@ $(() => {
       $("#member-name").text(data.name);
     }
   });
+
+
+  //Materialize initialization 
+  $('.sidenav').sidenav();
 });

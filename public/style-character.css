@@ -1,5 +1,5 @@
 body{
-  /*  background-image: url("images/background.png"); */
+    background-image: url("images/background.png");
     font-family: 'Press Start 2P', cursive;
     padding: 0;
     margin: 0;
@@ -69,7 +69,7 @@ body{
     right: 260px;
     bottom: 80px;
 }
-/*Buttons 
+/*Buttons */
 .game-buttons{
    
     border: none;
@@ -141,7 +141,7 @@ body{
     box-shadow: 0 5px #666;
     transform: translateY(4px);
 }
-*/
+
 #clean-button:active{
     background-color: (107, 157, 107);
     box-shadow: 0 5px #666;

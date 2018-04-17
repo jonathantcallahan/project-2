@@ -10,6 +10,7 @@ const db = require("./models");
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
+app.use(express.static("public"));
 
 app.use(
   session({ secret: "keyboard cat", resave: true, saveUninitialized: true })
@@ -24,13 +25,11 @@ require("./controllers/userApiRoutes.js")(app);
 require("./controllers/html")(app);
 require("./controllers/api")(app);
 
-app.use(express.static("public"));
 
-
-const PORT = process.env.PORT || process.argv[2] || 8080;
+const PORT = process.env.PORT || process.argv[2] || 8081;
 
 const force = false;
-db.sequelize.sync().then(() => {
+db.sequelize.sync({ force }).then(() => {
   if (force) {
     require("./seed/user")(db);
     //require("./seed/pets")(db);
