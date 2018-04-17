@@ -11,7 +11,7 @@ module.exports = app => {
   // So we're sending the user back the route to the members page because the redirect will happen on the front end
   // They won't get this or even be able to access this page if they aren't authed
   app.post("/api/user/login", passport.authenticate("local"), (req, res) =>
-    res.json("/")
+    res.json("/home")
   );
 
   // Route for signing up a user. The user's password is automatically hashed and stored securely thanks to
@@ -30,7 +30,7 @@ module.exports = app => {
   // Route for logging user out
   app.get("/user/logout", (req, res) => {
     req.logout();
-    res.redirect("/");
+    res.redirect("/user/login");
   });
 
   // Route for getting some data about our user to be used client side

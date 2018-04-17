@@ -22,7 +22,4 @@ $(() => {
     email.val("");
     password.val("");
   });
-
-  //Materialize initialization 
-  $('.sidenav').sidenav();
 });

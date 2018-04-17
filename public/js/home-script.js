@@ -1,7 +1,13 @@
 $(document).ready(() => {
   $("select").formSelect();
 
+
+  $.get('/api/user/data', user => {
+    console.log(user)
+  })
+
   $("#submit-pet").click(function() {
+    console.log('button clicked')
     var name = $("#pet-name")
       .val()
       .trim();
@@ -17,19 +23,22 @@ $(document).ready(() => {
   });
 
   $.get("/my-pet/api", pets => {
-
+    
     pets.forEach(({ id, name }) => {
       const d = $("<div>");
       const b = $("<button>")
         .attr("class", "delete-button")
         .attr("data-id", id)
-        .html("Delete");
+        .html("<i class='fas fa-bomb'></i>");
       const a = $("<a>")
-        .attr("href", "#")
+        .attr("data-id", id)
+        .attr("href", `/pet/${name}`)
         .text(name);
+      d.attr("class","list-item");
       d.append(a, b);
       $("#list").append(d);
     });
+
 
     $(".delete-button").click(function() {
       event.preventDefault();
@@ -42,4 +51,7 @@ $(document).ready(() => {
       });
     });
   });
+
+  $('.nav-wrapper').mouseout
+
 });

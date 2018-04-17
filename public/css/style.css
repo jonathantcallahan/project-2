@@ -27,7 +27,6 @@
     line-height: 1.5;
     font-size:1.0rem;
     margin: 0;
-    font-family: 'Press Start 2P', cursive;
 }
 .main-container{
     height: 550px;
@@ -55,9 +54,7 @@
 #submit-button2{
     margin-top: 56px;
 }
-#pet-name{
-    color: #EF5350;
-}
+
 
 /*  UserSignup Page */
 

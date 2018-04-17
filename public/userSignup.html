@@ -2,21 +2,21 @@
 <html lang="en">
 
 <head>
-    
-    <link rel="shortcut icon" href="images/tamagotchi.png">
     <title>Authentication</title>
+    <link rel="shortcut icon" href="./../images/tamagotchi.png">
         <!-- Compiled and minified CSS for Materialize -->
-    <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
-    <link rel="stylesheet" type="text/css" href="style.css">
-    
-    </style>
-    <script
-    src="https://code.jquery.com/jquery-3.3.1.js"
-    integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
-    crossorigin="anonymous"></script>
-    
+        <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
+        <link rel="stylesheet" href="./../css/style.css">
+      
+        </style>
+        <script
+        src="https://code.jquery.com/jquery-3.3.1.js"
+        integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+        crossorigin="anonymous"></script>
+        <script src="./../js/home-script.js"></script>
+        <script src="./../js/home.js"></script>
 </head>
 
 <body>
@@ -28,23 +28,25 @@
                     <a href="/home" class="brand-logo">Tamagotchi</a>
                     
                     <ul id="nav-mobile" class="right hide-on-med-and-down">
-                    <li><a href="/user/signup" id="signup">Sign Up</a></li>
-                    <li><a href="/user/login" id="signin">Sign In</a></li>
+                    <li><a href="/signup" id="signup">Sign Up</a></li>
+                    <li><a href="/signin" id="signin">Sign In</a></li>
                     </ul>
                     
                     <!--Side Navigation. It will pop up depending on screen size-->
                     <ul id="slide-out" class="sidenav">
                         <h5>Menu</h5>
                             <hr>
-                        <li><a href="/user/signup"><i class="material-icons">verified_user</i>Sign In</a></li>
-                        <li><a href="/user/login"><i class="material-icons">account_box</i>Sign Up</a></li>
+                        <li><a href="/signin"><i class="material-icons">verified_user</i>Sign In</a></li>
+                        <li><a href="/signup"><i class="material-icons">account_box</i>Sign Up</a></li>
                     </ul>
                     <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons" style="font-size: 2.5rem">menu</i></a>
                 </div>  
             </nav>
             
+    
     <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ End Navbar +++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
-    <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ Body +++++++++++++++++++++++++++++++++++++++++++++++++++++ --> 
+    <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ Body +++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+                    
 
     <div class="container sign-up-form">
         <h2>Sign Up Form</h2>
